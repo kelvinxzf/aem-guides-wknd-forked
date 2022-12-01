@@ -35,7 +35,7 @@
     <description>All content package for WKND Sites Project</description>
     
     <properties>
-       <aio-aem-events.version>0.0.42</aio-aem-events.version>
+       <aio-aem-events.version>1.0.0</aio-aem-events.version>
     </properties>
 
     <!-- ====================================================================== -->
