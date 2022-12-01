@@ -1,0 +1,10 @@
+{
+  "aio.event.code": "asset_published",
+  "aio.event.label": "Asset Published",
+  "aio.event.description": "Asset Published Event",
+  "aio.xdm.event.type": "com.adobe.xdm.event.AemPagePublishedEvent",
+  "osgi.event.handler.type": "com.adobe.aio.aem.event.osgimapping.eventhandler.AssetReplicationEventHandler",
+  "osgi.topic": "com/day/cq/replication",
+  "osgi.filter": "(&(type=ACTIVATE)(!(event.application=*)))",
+  "osgi.jcr.path.filter": "/content/dam/"
+}
