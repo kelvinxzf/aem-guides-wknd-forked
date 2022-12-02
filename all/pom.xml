@@ -34,6 +34,10 @@
     <name>WKND Sites Project - All</name>
     <description>All content package for WKND Sites Project</description>
 
+    <properties>
+       <aio-aem-events.version>1.0.0</aio-aem-events.version>
+    </properties>
+    
     <!-- ====================================================================== -->
     <!-- B U I L D   D E F I N I T I O N                                        -->
     <!-- ====================================================================== -->
@@ -90,6 +94,13 @@
                             <type>zip</type>
                             <target>/apps/wknd-vendor-packages/content/install</target>
                         </embedded>
+                        <!-- aio aem events-->
+                        <embedded>
+     						<groupId>com.adobe.aio.aem</groupId>
+     						<artifactId>aio-aem-events</artifactId>
+     						<type>zip</type>
+     						<target>/apps/wknd-packages/application/install</target>
+						</embedded>
                     </embeddeds>
                 </configuration>
             </plugin>
@@ -310,6 +321,14 @@
             <groupId>com.adobe.aem.guides</groupId>
             <artifactId>aem-guides-wknd-shared.ui.content</artifactId>
             <type>zip</type>
-        </dependency>        
+        </dependency>
+        <!-- aio aem events-->
+        <dependency>
+    		<groupId>com.adobe.aio.aem</groupId>
+    		<artifactId>aio-aem-events</artifactId>
+    		<version>${aio-aem-events.version}</version>
+    		<type>zip</type>
+		</dependency>    
+    </dependencies>  
     </dependencies>
 </project>
