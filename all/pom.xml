@@ -328,7 +328,6 @@
     		<artifactId>aio-aem-events</artifactId>
     		<version>${aio-aem-events.version}</version>
     		<type>zip</type>
-		</dependency>    
-    </dependencies>  
+		</dependency>     
     </dependencies>
 </project>
