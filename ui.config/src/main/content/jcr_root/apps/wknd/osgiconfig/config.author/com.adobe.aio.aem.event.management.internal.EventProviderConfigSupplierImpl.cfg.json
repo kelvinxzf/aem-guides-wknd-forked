@@ -1,0 +1,4 @@
+{
+  "aio.provider.description": "wknd aio events sample project",
+  "event.delivery.format": "cloud_events_v1"
+}
