@@ -4,6 +4,7 @@ import com.adobe.granite.workflow.exec.WorkflowProcess;
 
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.io.IOException;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpResponse;
@@ -44,6 +45,7 @@ public class FireflyInpaintProcess implements WorkflowProcess {
                 String ffPrompt = valueMap.get("fireflyPrompt", String.class);
                 LOG.info("Firefly prompt is " + ffPrompt);
 
+                CloseableHttpClient httpClient = HttpClients.createDefault();
                 try {
                         String encodedPromptValue = URLEncoder.encode(ffPrompt, StandardCharsets.UTF_8.toString());
                         String encodedAssertPath = URLEncoder.encode(assetPath, StandardCharsets.UTF_8.toString());
@@ -52,7 +54,6 @@ public class FireflyInpaintProcess implements WorkflowProcess {
                                         encodedPromptValue);
                         LOG.info("Firefly url is " + fireflyUrl);
 
-                        CloseableHttpClient httpClient = HttpClients.createDefault();
                         HttpGet request = new HttpGet(fireflyUrl);
                         HttpResponse response = httpClient.execute(request);
                         String responseString = EntityUtils.toString(response.getEntity(), "UTF-8");
@@ -61,6 +62,15 @@ public class FireflyInpaintProcess implements WorkflowProcess {
 
                 } catch (Exception e) {
                         throw new WorkflowException("Failed to execute HTTP request", e);
+                } finally {
+                        if (null != httpClient) {
+                                try {
+                                        httpClient.close();
+                                } catch (IOException e) {
+                                        LOG.error("IOException during closing of httpClient");
+                                }
+
+                        }
                 }
 
         }
