@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
-    <filter root="/apps/wknd/clientlibs"/>
-    <filter root="/apps/wknd/components"/>
-    <filter root="/apps/wknd/i18n"/>
-    <filter root="/apps/msm/wknd_blueprint" mode="merge"/>
+    <filter root="/apps/wknd/clientlibs" />
+    <filter root="/apps/wknd/components" />
+    <filter root="/apps/wknd/i18n" />
+    <filter root="/apps/msm/wknd_blueprint" mode="merge" />
+    <filter root="/apps/wknd/workflow" />
+    <filter root="/apps/wknd/workflow/firefly-prompt-dialog" />
 </workspaceFilter>
