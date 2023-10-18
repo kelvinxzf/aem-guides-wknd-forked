@@ -4,16 +4,18 @@
     <!-- Content Filters
     <filter root="/content/wknd" />
     -->
-    <!-- Changing the filter mode to merge will preserve any existing content on the target environment -->
-    <filter root="/content/wknd" mode="merge"/>
-    
-    <filter root="/content/dam/wknd" mode="update"/>
-    <filter root="/content/experience-fragments/wknd"/>
+    <!-- Changing the filter mode to merge will preserve any existing content on the target
+    environment -->
+    <filter root="/content/wknd" mode="merge" />
+
+    <filter root="/content/dam/wknd" mode="update" />
+    <filter root="/content/experience-fragments/wknd" />
 
     <!-- Force Policy and Template Updates -->
     <filter root="/conf/wknd/settings/wcm" />
     <filter root="/conf/wknd/settings/cloudconfigs" mode="merge" />
     <filter root="/conf/wknd/settings/cloudsettings" mode="merge" />
+    <filter root="/conf/global/settings/workflow/models/firefly" />
 
     <!-- WKND Member Group-->
     <filter root="/home/groups/wknd" mode="merge" />
